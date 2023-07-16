@@ -13,18 +13,18 @@ interface MainNavProps {
 const MainNav: React.FC<MainNavProps> = ({ data }) => {
   const pathname = usePathname();
 
-  const route = data.map((route) => ({
-    herf: `/category/${route.id}`,
+  const routes = data.map((route) => ({
+    href: `/category/${route.id}`,
     label: route.name,
     active: pathname === `/category/${route.id}`,
   }));
 
   return (
     <nav className="mx-6 flex items-center space-x-4 lg:space-x-6">
-      {route.map((route) => (
+      {routes.map((route) => (
         <Link
-          key={route.herf}
-          href={route.herf}
+          key={route.href}
+          href={route.href}
           className={cn(
             "text-sm font-medium transition-colors hover:text-black",
             route.active ? "text-black" : "text-neutral-500"
