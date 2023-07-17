@@ -7,10 +7,11 @@ const Loading = () => {
       <div className="w-full h-full p-8">
         <Skeleton className="w-full aspect-square rounded-xl md:aspect-[2.4/1]" />
         <div className="lg:grid lg:grid-cols-5 lg:gap-x-8 mt-8 h-full">
-          <div className="hidden sm:block">
+          <div className="hidden lg:block">
             <Skeleton className="w-full h-[500px] rounded-xl" />
           </div>
           <div className="mt-6 lg:col-span-4 lg:mt-0">
+            <Skeleton className="mb-[30px] block lg:hidden h-[49px] w-[110px] rounded-full" />
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {Array.from({ length: 6 }).map((_, i) => (
                 <Skeleton key={i} className="aspect-square rounded-xl" />
