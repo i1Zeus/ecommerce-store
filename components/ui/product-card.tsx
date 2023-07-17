@@ -10,6 +10,7 @@ import IconButton from "@/components/ui/icon-button";
 // import usePreviewModal from "@/hooks/use-preview-modal";
 // import useCart from "@/hooks/use-cart";
 import { Product } from "@/types";
+import Currency from "./currency";
 
 interface ProductCard {
   data: Product;
@@ -69,7 +70,7 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
       </div>
       {/* Price & Reiew */}
       <div className="flex items-center justify-between">
-        {/* <Currency value={data?.price} /> */}
+        <Currency value={data?.price} />
       </div>
     </div>
   );
