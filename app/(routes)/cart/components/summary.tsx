@@ -1,3 +1,5 @@
+"use client";
+
 const Summary = () => {
   return <div>Summery</div>;
 };

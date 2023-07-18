@@ -47,6 +47,9 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
               {data.size.name}
             </p>
           </div>
+          <div className="mt-1 lg:mt-1">
+            <Currency key={data.id} value={data.price} />
+          </div>
         </div>
       </div>
     </li>
