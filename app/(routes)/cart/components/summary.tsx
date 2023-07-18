@@ -1,13 +1,14 @@
 "use client";
 
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
 
 import Button from "@/components/ui/button";
 import Currency from "@/components/ui/currency";
 import useCart from "@/hooks/use-cart";
+import NoResults from "@/components/ui/no-results";
 
 interface SummaryProps {}
 
@@ -59,15 +60,25 @@ const Summary: React.FC<SummaryProps> = () => {
       <h2 className="text-lg font-medium text-gray-900 first-letter:font-bold first-letter:text-2xl">
         Order Summery
       </h2>
-      <div className="mt-6 space-y-4">
-        <div className="flex items-center justify-between border-t-[2px] border-gray-200 pt-4">
-          <div className="text-base font-medium text-gray-900">Order Total</div>
-          <Currency value={totalPrice} />
-        </div>
-      </div>
-      <Button className="w-full mt-6" onClick={onCheckout}>
-        Check Out
-      </Button>
+      {items.length !== 0 ? (
+        <>
+          <div className="mt-6 space-y-4">
+            <div className="flex items-center justify-between border-t-[2px] border-gray-200 pt-4">
+              <div className="text-base font-medium text-gray-900">
+                Order Total
+              </div>
+              <Currency value={totalPrice} />
+            </div>
+          </div>
+          <Button className="w-full mt-6" onClick={onCheckout}>
+            Check Out
+          </Button>
+        </>
+      ) : (
+        <>
+          <NoResults />
+        </>
+      )}
     </div>
   );
 };
