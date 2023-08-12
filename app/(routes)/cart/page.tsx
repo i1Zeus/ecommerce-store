@@ -3,9 +3,9 @@
 import Container from "@/components/ui/container";
 import { useState, useEffect } from "react";
 
+import useCart from "@/hooks/use-cart";
 import Summary from "./components/summary";
 import CartItem from "./components/cart-item";
-import useCart from "@/hooks/use-cart";
 
 export const revalidate = 0;
 
